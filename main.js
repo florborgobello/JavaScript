@@ -4,31 +4,26 @@ function armarPlato() {
 
   if (respuesta.toUpperCase() === "S") {
     let proteina = prompt("Elija una proteína (animal/vegetal)");
-
-    let guarnicion = prompt("¿Desea agregar guarnición? (S/N)");
     let costo = 0;
-
-    let acompanamiento = prompt(
-      "¿Desea agregar un segundo acompañamiento? (S/N)"
-    );
-
     if (proteina.toUpperCase() === "ANIMAL") {
       costo += 150;
     } else if (proteina.toUpperCase() === "VEGETAL") {
       costo += 100;
     }
 
+    let guarnicion = prompt("¿Desea agregar guarnición? (S/N)");
     if (guarnicion.toUpperCase() === "S") {
       costo += 50;
     }
 
-    if (acompanamiento.toUpperCase() === "S") {
-      costo += 40;
+    let bebida = prompt("¿Desea agregar una bebida? (S/N)");
+    if (bebida.toUpperCase() === "S") {
+      costo += 30;
     }
 
     alert(`El costo de este menu es $${costo}. Quieres agregarlo a tu pedido?`);
   } else {
-    alert("¡Gracias por visitarnos!");
+    alert("¡Elija uno de nuestros bowls ya armados!");
   }
 }
 
